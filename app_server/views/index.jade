@@ -1,0 +1,19 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.page-header
+  .col-col-md.col-md-offset
+    div
+      form(action="/location/", method="GET")
+        a: img.className#IdName(src="/images/images_1.jpg" alt="Image Title")(width="100%")(height="100%")(align="center")
+        .col-md-4.col-md-offset-4
+        .row
+          button.btn.btn-md.btn-primary.btn-block(type="submit") View
+
+
+
+
+      
+  
