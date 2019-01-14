@@ -12,7 +12,7 @@ block content
     .col-xs-12.col-sm-8(ng-controller="locationListCtrl")
       label(for="filter") Filter results
       input#filter(type="text", name="filter", ng-model="textFilter")
-      //.error {{ message }} 
+      .error {{ message }} 
       .row.list-group
         .col-xs-12.list-group-item(ng-repeat="location in data.locations | filter: textFilter")
           h4 

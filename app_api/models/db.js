@@ -13,6 +13,7 @@ mongoose.connection.on('error', function(err) {
 });
 mongoose.connection.on('disconnected', function() {
     console.log('Mongoose disconnected');
+    mongoose.connect(dbURI, {useNewUrlParser: true});
 });
 
 // CAPTURE APP TERMINATION / RESTART EVENTS
