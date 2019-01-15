@@ -1,6 +1,10 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
 var dbURI = 'mongodb://192.168.21.251/Loc8r';
+
+if (process.env.NODE_ENV === 'production') {
+    dbURI = 'mongodb://heroku_app20110907:4rqhlidfdqq6vgdi06c15jrlpf@ds033669.mongolab.com:33669/heroku_app20110907';
+}
 //var logDB = mongoose.createConnection(dbURIlog);
 mongoose.connect(dbURI, {useNewUrlParser: true});
 
