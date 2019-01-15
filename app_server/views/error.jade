@@ -1,0 +1,11 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+    #banner.page-header
+    .row
+      .col-md-6.col-sm-12
+        h1= message
+        h2= error.status
+        //pre #{error.stack}
