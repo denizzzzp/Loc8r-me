@@ -9,18 +9,15 @@ var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 var routesApi = require('./app_api/routes/index');
 //require('../controllers/yourModule');
+if (process.env.NODE_APM === 'elastic') {
 var apm = require('elastic-apm-node').start({
-  // Override service name from package.json
-  // Allowed characters: a-z, A-Z, 0-9, -, _, and space
   serviceName: 'Loc8r-me-01',
-
-  // Use if APM Server requires a token
   secretToken: '',
   filterHttpHeaders: false,
   captureBody: 'all',
-  // Set custom APM Server URL (default: http://localhost:8200)
   serverUrl: 'http://192.168.21.77:8200',
 })
+}
 
 //
 var app = express();
