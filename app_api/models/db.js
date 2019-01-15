@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var gracefulShutdown;
-var dbURI = 'mongodb://192.168.21.251/Loc8r';
+var dbURI = 'mongodb://mongodb.devtest.svc/Loc8r';
 //var logDB = mongoose.createConnection(dbURIlog);
 mongoose.connect(dbURI, {useNewUrlParser: true});
 
