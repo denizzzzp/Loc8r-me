@@ -10,13 +10,13 @@ var usersRouter = require('./app_server/routes/users');
 var routesApi = require('./app_api/routes/index');
 //require('../controllers/yourModule');
 if (process.env.NODE_APM === 'elastic') {
-var apm = require('elastic-apm-node').start({
-  serviceName: 'Loc8r-me-01',
-  secretToken: '',
-  filterHttpHeaders: false,
-  captureBody: 'all',
-  serverUrl: 'http://192.168.21.77:8200',
-})
+  var apm = require('elastic-apm-node').start({
+    serviceName: 'Loc8r-me-01',
+    secretToken: '',
+    filterHttpHeaders: false,
+    captureBody: 'all',
+    serverUrl: 'http://192.168.21.77:8200',
+  })
 }
 
 //
@@ -38,12 +38,12 @@ app.use('/users', usersRouter);
 app.use('/api', routesApi);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
